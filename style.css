@@ -1,0 +1,33 @@
+@keyframes rain {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 100%;
+    }
+  }
+  
+  .rain {
+    background-image: url('rain.gif');
+    background-size: contain;
+    animation: rain 1ms ease-in-out infinite;
+  }
+
+
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid #000;
+  }
+  
+  .game-board div {
+    background-color: #ccc;
+    border: 2px solid #000;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 1;
+  }
