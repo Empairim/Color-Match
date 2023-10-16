@@ -12,6 +12,39 @@
     background-size: contain;
     animation: rain 1ms ease-in-out infinite;
   }
+  body {
+    max-width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    overflow: hidden;
+  }
+  
+  
+  .water {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('flood.gif'); /* Replace with your water texture image */
+    background-size: cover;
+    animation: flood 5s ease-in-out infinite;
+  }
+  
+  @keyframes flood {
+    0% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(1.2);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+  
 
 
   .game-board {
@@ -22,12 +55,19 @@
     padding: 10px;
     background-color: #fff;
     border: 2px solid #000;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+    transform: perspective(1000px) rotateX(30deg);
+    transform-origin: center center;
   }
   
   .game-board div {
     background-color: #ccc;
-    border: 2px solid #000;
+    border-radius: 10px;
     font-size: 3rem;
     text-align: center;
     line-height: 1;
+    opacity: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: perspective(1000px) rotateX(-30deg);
+    transform-origin: center center;
   }

@@ -22,7 +22,7 @@ const fontOptions = [
 ];
 
 //timer logic
-let timer = 60;
+let timer = 20;
 const timerInterval = setInterval(updateTimer, 1000);
 
 function updateTimer() {
@@ -37,6 +37,11 @@ function updateTimer() {
   if (timer >= 0) {
     toggleRain();
   }
+
+  if (timer >= 0) {
+    flood();
+  }
+
   if (timer === 0) {
     clearInterval(timerInterval);
   }
@@ -46,6 +51,13 @@ function updateTimer() {
 function toggleRain() {
   const body = document.querySelector("body");
   body.classList.toggle("rain");
+}
+//creating flood effect
+function flood() {
+  {
+    const body = document.querySelector("body");
+    body.classList.toggle("water");
+  }
 }
 
 function createGameBoard() {
