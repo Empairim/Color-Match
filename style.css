@@ -1,6 +1,6 @@
-@keyframes rain {
-    0% {
-      background-position: 0 0;
+/* @keyframes rain {
+    0% { */
+      /* background-position: 0 0;
     }
     100% {
       background-position: 0 100%;
@@ -12,28 +12,37 @@
     background-size: contain;
     animation: rain 1ms ease-in-out infinite;
   }
+  */
+  
   body {
-    max-width: 100%;
+    
     height: 100vh;
-    margin: 0;
     padding: 0;
     background-color: #f2f2f2;
-    overflow: hidden;
-  }
-  
-  
-  .water {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('flood.gif'); /* Replace with your water texture image */
+    background-image: url("desk2.jpeg");
     background-size: cover;
-    animation: flood 5s ease-in-out infinite;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: auto;
+    margin: 0;
+    
+   
+
+  }
+  .water {
+    position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+    /* background-image: url('zoobackground.jpeg');  */
+    background-size: cover;
+    animation: flood 5s linear infinite;
   }
   
-  @keyframes flood {
+  /* @keyframes flood {
     0% {
       transform: scaleY(1);
     }
@@ -43,31 +52,114 @@
     100% {
       transform: scaleY(1);
     }
-  }
+  } */
   
-
+  /* .game-board::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+  } */
 
   .game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 10px;
-    padding: 10px;
-    background-color: #fff;
-    border: 2px solid #000;
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
-    transform: perspective(1000px) rotateX(30deg);
-    transform-origin: center center;
-  }
+    position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+  padding: 25px;
+  /* background-color: #f2f2f2; */
+  background-image: url("phonescreen.png");
+  background-size: 165%;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 10px solid #000;
+  border-radius: 20px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+  transform: perspective(1000px) rotateX(15deg);
+  transform-origin: center center;
+  opacity: 100%;
+  height: 580px;
+  width: fit-content;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  
+}
   
   .game-board div {
-    background-color: #ccc;
-    border-radius: 10px;
+    width: auto;
+    background-color: #06060600;
+    background-image: url("LBXB.gif");
+    background-size: contain;
+    background-position: center;
+    border-radius: 15px;
     font-size: 3rem;
     text-align: center;
     line-height: 1;
     opacity: 100%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transform: perspective(1000px) rotateX(-30deg);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    transform: perspective(2000px) rotateX(-50deg);
     transform-origin: center center;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    height: 50px;
   }
+  
+  .game-board div:hover {
+    background-color: #0bdbf3;
+  }
+  
+  .game-board div.selected {
+    animation: pulse 1s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .header{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+/* 
+  @keyframes win-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .win {
+    animation: win-animation 1s ease-in-out;
+  } */
+
+  /* @keyframes shake {
+    0% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+  }
+  
+  .shake {
+    animation: shake 0.5s;
+  } */
